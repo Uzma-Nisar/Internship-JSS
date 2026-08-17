@@ -1,0 +1,309 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c1e35;
+  padding: 10px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 80px;
+}
+
+/* =======================================================
+   🎨 LOGO IMAGE STYLING
+   ======================================================= */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.navbar-logo-img {
+  height: 110px;
+  width: auto;  
+  display: block;
+  object-fit: contain;
+  margin-left: -10px;
+  filter: brightness(0) invert(1); 
+  transform: scale(1.3); 
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+  transform: scale(1.38);
+}
+
+/* =======================================================
+   NAV LINKS & DESKTOP STYLING
+   ======================================================= */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.active {
+  color: #1a73e8 !important; /* Perfect Blue Highlight active tab state */
+  font-weight: 600;
+}
+
+/* Sliding active indicator bar */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.3px;
+  bottom: -2px;
+  left: 0;
+  background-color: #1a73e8;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.mobile-auth-links {
+  display: none;
+}
+
+/* =======================================================
+   AUTH BUTTONS (DESKTOP)
+   ======================================================= */
+.navbar-auth {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-login {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  color: #1a73e8;
+}
+
+/* Beautiful Rounded Pill/Capsule Shape Button as requested */
+.btn-get-started {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px; /* High-fidelity rounded pill shape */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none; 
+  display: inline-block;
+}
+
+.btn-get-started:hover {
+  background-color: #155cb4;
+}
+
+/* Hamburger icon (Desktop setup pe hidden) */
+.hamburger-menu {
+  display: none;
+}
+
+/* =======================================================
+   📱 MODERN MOBILE RESPONSIVE STYLES (768px AND BELOW)
+   ======================================================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    height: 70px;
+  }
+  
+  .navbar-logo-img {
+    height: 75px;
+    transform: scale(1.15);
+    margin-left: -5px;
+  }
+
+  .navbar-auth {
+    display: none; 
+  }
+
+  /* Hamburger Lines */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1010;
+    pointer-events: auto !important; 
+    padding: 10px; 
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  /* Floating Card Dropdown */
+  .navbar-links {
+    position: absolute;
+    top: 75px; 
+    left: 5%;
+    right: 5%;
+    width: 90%; 
+    background-color: #0d1e36; 
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 24px 28px;
+    gap: 16px;
+    box-sizing: border-box;
+    
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.25s ease;
+    z-index: 1009;
+  }
+
+  .navbar-links.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Mobile Nav Links */
+  .nav-link {
+    font-size: 16px;
+    color: #cbd5e1;
+    width: 100%;
+    padding: 8px 0;
+    text-align: left;
+    display: block;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-link.active {
+    color: #1a73e8 !important; /* Mobile menu active link matches desktop blue */
+  }
+
+  .nav-link::after {
+    display: none; 
+  }
+
+  /* Mobile Auth Area */
+  .mobile-auth-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    margin-top: 5px;
+    gap: 15px;
+  }
+
+  /* Sleek, Thin Separation line inside mobile card */
+  .mobile-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    margin-bottom: 5px;
+  }
+
+  /* Centered Login styling */
+  .mobile-auth-links .btn-login-mobile {
+    font-size: 15px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    transition: color 0.2s;
+  }
+
+  .mobile-auth-links .btn-login-mobile:hover {
+    color: #1a73e8;
+  }
+
+  /* Capsule Pill Button inside Mobile Drawer */
+  .mobile-auth-links .btn-get-started-mobile {
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #1a73e8;
+    border: none;
+    padding: 13px 0;
+    border-radius: 30px; /* High-fidelity rounded pill shape */
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+    transition: background-color 0.2s;
+  }
+
+  .mobile-auth-links .btn-get-started-mobile:hover {
+    background-color: #155cb4;
+  }
+
+  /* Hamburger rotation transitions */
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

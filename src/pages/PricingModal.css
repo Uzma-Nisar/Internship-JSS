@@ -1,0 +1,383 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Main Modal Card - Compacted to fit screen without scroll */
+.pricing-modal-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  width: 100%;
+  max-width: 1080px;
+  border-radius: 20px;
+  padding: 24px 24px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  max-height: 98vh;
+  overflow-y: hidden; /* Scrollbar completely removed */
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* Header */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.join-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #2563eb;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pricing-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.pricing-header p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Price Card with Smooth Hover Animation */
+.price-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* Hover Zoom & Lift Effect */
+.price-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #94a3b8;
+  box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.08);
+}
+
+.yearly-card {
+  background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+  border-color: #d8b4fe;
+}
+
+.yearly-card:hover {
+  border-color: #a855f7;
+  box-shadow: 0 15px 25px -8px rgba(168, 85, 247, 0.15);
+}
+
+/* Card Top Row */
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.free-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.monthly-icon {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.yearly-icon {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+/* Badges */
+.plan-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.free-badge {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.monthly-badge {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.yearly-badge {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+/* Titles and Pricing */
+.plan-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+
+.plan-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.yearly-card .plan-price {
+  color: #7c3aed;
+}
+
+.plan-duration {
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.plan-desc {
+  font-size: 11.5px;
+  color: #475569;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+/* Features List */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  font-size: 11.5px;
+  color: #334155;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.check-icon {
+  color: #2563eb;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.monthly-card .check-icon, .yearly-card .check-icon {
+  color: #059669;
+}
+
+/* Buttons */
+.plan-btn {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.plan-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.free-btn {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.monthly-btn {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+.yearly-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
+}
+
+/* Cancel Text */
+.cancel-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.cancel-text svg {
+  color: #10b981;
+}
+
+/* Secure Footer Banner */
+.secure-footer-banner {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+@media (max-width: 800px) {
+  .secure-footer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.secure-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lock-icon-box {
+  width: 32px;
+  height: 32px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.secure-left strong {
+  font-size: 12px;
+  color: #0f172a;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.secure-left p {
+  font-size: 10.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+.secure-right {
+  display: flex;
+  gap: 14px;
+  font-size: 10.5px;
+  color: #475569;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.secure-right span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.secure-right svg {
+  color: #64748b;
+}
