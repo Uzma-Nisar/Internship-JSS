@@ -10,7 +10,12 @@ import Signup from './pages/Signup';
 import System from './pages/System';
 import Azure from './pages/Azure';
 import Awscloud from './pages/Awscloud';
-
+import Cisco from './pages/Cisco';
+import Freelancer from './pages/Freelancer';
+import Dataana from './pages/Dataana';
+import Datasc from './pages/Datasc';
+import Ai from './pages/Ai';
+import Wi from './pages/Wi';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +30,12 @@ function App() {
      <Route path="/system" element={<System />} />
       <Route path="/azure" element={<Azure />} />
       <Route path="/awscloud" element={<Awscloud />} />
+      <Route path="/cisco" element={<Cisco />} />
+       <Route path="/freelancer" element={<Freelancer />} />
+            <Route path="/dataana" element={<Dataana />} />
+             <Route path="/datasc" element={<Datasc />} />
+        <Route path="/ai" element={<Ai />} />
+         <Route path="/wi" element={<Wi/>} />
       </Routes>
     </BrowserRouter>
   );

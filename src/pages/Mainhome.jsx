@@ -331,33 +331,12 @@ function Mainhome() {
     <div className="program-icon-wrapper bg-indigo">
       <LuCpu className="prog-card-icon" />
     </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>Cisco Network Engineer Certificate Program</h3>
+    <h3 style={{cursor: 'pointer'}} onClick={() => navigate("/Cisco")}>Cisco Network Engineer Certificate Program</h3>
     <p><strong>Best for:</strong> Become a Certified Cisco Network Engineer</p>
     <p className="tags">Wireshark • Cisco IOS • Ethernet • DHCP • DNS</p>
   </div>
   <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>
-      Open Program <LuArrowUpRight />
-    </button>
-  </div>
-</div>
-
-{/* Card 3: Data Analytics */}
-<div className="program-card fade-in-animation">
-  <div className="card-top-layout">
-    <div className="badge-meta-container">
-      <span className="meta-badge-item"><LuGraduationCap /> Beginner-Friendly</span>
-      <span className="meta-badge-item"><LuClock /> 5 hours 0 min</span>
-    </div>
-    <div className="program-icon-wrapper bg-indigo">
-      <LuCpu className="prog-card-icon" />
-    </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>Data Analytics Certificate Program</h3>
-    <p><strong>Best for:</strong> Transform Data into Insights with Power BI</p>
-    <p className="tags">Microsoft Power BI • Power Query • DAX</p>
-  </div>
-  <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>
+    <button className="btn-card-link" onClick={() => navigate("/Cisco")}>
       Open Program <LuArrowUpRight />
     </button>
   </div>
@@ -374,16 +353,41 @@ function Mainhome() {
     <div className="program-icon-wrapper bg-orange">
       <LuBriefcase className="prog-card-icon" />
     </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org/share/freelance.html', '_blank')}>Become a Freelancer | Skills-to-Income Program</h3>
+    <h3 style={{cursor: 'pointer'}} onClick={() => navigate("/Freelancer")}>Become a Freelancer | Skills-to-Income Program</h3>
     <p><strong>Best for:</strong> Transform Your Skills into a Sustainable Freelance Career</p>
     <p className="tags">Fiverr • Upwork • LinkedIn • Dribbble • Behance</p>
   </div>
   <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org/share/freelance.html', '_blank')}>
+    <button className="btn-card-link" onClick={() => navigate("/Freelancer")}>
       Open Program <LuArrowUpRight />
     </button>
   </div>
 </div>
+
+
+
+{/* Card 3: Data Analytics */}
+<div className="program-card fade-in-animation">
+  <div className="card-top-layout">
+    <div className="badge-meta-container">
+      <span className="meta-badge-item"><LuGraduationCap /> Beginner-Friendly</span>
+      <span className="meta-badge-item"><LuClock /> 5 hours 0 min</span>
+    </div>
+    <div className="program-icon-wrapper bg-indigo">
+      <LuCpu className="prog-card-icon" />
+    </div>
+    <h3 style={{cursor: 'pointer'}} onClick={() => navigate("/Dataana")}>Data Analytics Certificate Program</h3>
+    <p><strong>Best for:</strong> Transform Data into Insights with Power BI</p>
+    <p className="tags">Microsoft Power BI • Power Query • DAX</p>
+  </div>
+  <div className="card-bottom-layout">
+    <button className="btn-card-link" onClick={() => navigate("/Dataana")}>
+      Open Program <LuArrowUpRight />
+    </button>
+  </div>
+</div>
+
+
 
 
 {/* Card 4: Data Science */}
@@ -396,12 +400,12 @@ function Mainhome() {
     <div className="program-icon-wrapper bg-indigo">
       <LuCpu className="prog-card-icon" />
     </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>Data Science Certificate Program</h3>
+    <h3 style={{cursor: 'pointer'}} onClick={() =>navigate("/Datasc")}>Data Science Certificate Program</h3>
     <p><strong>Best for:</strong> Become proficient in Python for data science applications</p>
     <p className="tags">Python</p>
   </div>
   <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>
+    <button className="btn-card-link" onClick={() => navigate("/Datasc")}>
       Open Program <LuArrowUpRight />
     </button>
   </div>
@@ -417,12 +421,12 @@ function Mainhome() {
     <div className="program-icon-wrapper bg-indigo">
       <LuCpu className="prog-card-icon" />
     </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org/#/programs/ai-automation', '_blank')}>AI Engineering certificate program</h3>
+    <h3 style={{cursor: 'pointer'}} onClick={() =>navigate("/Ai")}>AI Engineering certificate program</h3>
     <p><strong>Best for:</strong> Unlock the World of AI with Python Expertise</p>
     <p className="tags">Python • PyGame</p>
   </div>
   <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org/#/programs/ai-automation', '_blank')}>
+    <button className="btn-card-link" onClick={() => navigate("/Ai")}>
       Open Program <LuArrowUpRight />
     </button>
   </div>
@@ -438,12 +442,12 @@ function Mainhome() {
     <div className="program-icon-wrapper bg-indigo">
       <LuCpu className="prog-card-icon" />
     </div>
-    <h3 style={{cursor: 'pointer'}} onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>Working as an IT Support Technician</h3>
+    <h3 style={{cursor: 'pointer'}} onClick={() => navigate("/Wi")}>Working as an IT Support Technician</h3>
     <p><strong>Best for:</strong> Build a career in IT Support with foundational skills</p>
     <p className="tags">Windows OS • MacOS • Linux • Azure • Active Directory</p>
   </div>
   <div className="card-bottom-layout">
-    <button className="btn-card-link" onClick={() => window.open('https://www.jobskillshare.org', '_blank')}>
+    <button className="btn-card-link" onClick={() => navigate("/Wi")}>
       Open Program <LuArrowUpRight />
     </button>
   </div>

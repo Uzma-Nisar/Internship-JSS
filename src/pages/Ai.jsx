@@ -6,7 +6,8 @@ import Signup from "./Signup";
 import Login from "./Login";
 import { useNavigate } from "react-router-dom";
 
-import heroImage from "../assets/clouds'.jpg";
+//import heroImage from "../assets/It-support-hero.png";
+import heroImage from "../assets/ai1.jpg";
 
 import {
   FaBookOpen,
@@ -87,40 +88,29 @@ import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoChevronDown } from "react-icons/io5";
 
 const skills = [
-  "Understand AWS core services and architecture",
-  "Manage and configure virtual networks and storage",
-  "Implement security groups and access controls",
-  "Deploy and manage AWS instances",
-  "Secure management environments",
-  "Optimize computing resources",
-  "Manage and monitor AWS infrastructure",
-  "Enable network security and connectivity",
-  "Utilize AWS serverless computing"
+  "Write basic Python code",
+  "Develop automation scripts",
+  "Understand programming logic",
+  "Build mini-projects"
 ];
 
 const technicalSkills = [
-  "AWS Service Management",
-  "Cloud Computing",
-  "Virtual Networking",
-  "Data Storage Management",
-  "AWS Infrastructure Management"
+  "Python Coding",
+  "Data Type Management",
+  "File Handling"
 ];
 
 const professionalSkills = [
-  "Problem-solving",
-  "Analytical Thinking",
-  "Infrastructure Optimization",
-  "Security Best Practices",
-  "Project Management",
-  "Collaboration"
+  "Problem-Solving",
+  "Logical Thinking"
 ];
 
 const reviews = [
   {
     name: "Learner",
-    date: "July 16, 2026",
-    course: "AWS Cloud Administrator Course | Advance",
-    text: "I just wanna appreciate you for this course and I know haven't get a job but one everything will settle and I will be working as Cloud engineer by his Grace and I really enjoy this course very well,and you know nobody knows everything.I will advice people to take the course at least I learnt how to create NACL that control inbound and outbound..."
+    date: "March 11, 2026",
+    course: "Python Fundamentals - AI Engineering",
+    text: "This course is great for both beginner and intermediate level especially for beginner"
   }
 ];
 
@@ -133,6 +123,7 @@ const FAQItem = ({ q, a }) => {
         <span>{q}</span>
         <span className="faq-icon">{isOpen ? "−" : "+"}</span>
       </div>
+
       {isOpen && (
         <div className="faq-answer">
           <p>{a}</p>
@@ -145,61 +136,39 @@ const FAQItem = ({ q, a }) => {
 const courses = [
   {
     no: 1,
-    title: "AWS Cloud Administrator | Fundamentals",
-    duration: "6 hours 0 min",
-    desc: "This course provides a foundational understanding of AWS services, focusing on practical application through hands-on labs.",
-    tags: ["AWS Fundamentals", "VPC Subnet Routing", "EC2 Elastic Compute", "EBS Storage"],
-    skillsIntro: "AWS Management · Networking · Storage Solutions · Backup and Restore · Instance Management · Security Implementation"
-  },
-  {
-    no: 2,
-    title: "AWS Cloud Administrator Course | Advance",
-    duration: "10 hours 0 min",
-    desc: "The AWS Cloud Administrator Course | Advance equips professionals with in-depth skills to manage AWS infrastructure effectively, focusing on cloud engineering tasks rather than DevOps practices.",
-    tags: ["IAM Identity and Access Management", "EC2 Elastic Compute", "Multi Factor Authentication", "AWS Billing"],
-    skillsIntro: "User and group configuration · Computing resource management · Implementing MFA · Cost management and billing analysis · Policy and role management · Monitoring and logging"
-  },
-  {
-    no: 3,
-    title: "AWS DevOps Engineer Certificate",
-    duration: "20 hours 0 min",
-    desc: "AWS DevOps Engineer Certification focuses on mastering DevOps tools and methodologies with AWS, covering key technologies and practical projects.",
-    tags: ["Version Control with Git", "Microservices with Docker", "Infrastructure as Code with Terraform", "Configuration Management with Ansible"],
-    skillsIntro: "Version Control · Containerization · Infrastructure as Code · Continuous Integration/Delivery · Container Orchestration · System Monitoring"
+    title: "Python Fundamentals - AI Engineering",
+    duration: "31 hours 0 min",
+    desc: "Python Fundamentals - AI Engineering is an introductory course designed to teach Python programming essentials with applications in AI and automation.",
+    tags: ["Python Programming Basics", "Variables and Data Types", "Strings and String Methods", "Lists, Tuples, and Dictionaries"],
+    skillsIntro: "Programming in Python · Automation Script Writing · Basic Data Manipulation · Control Flow Management · Understanding AI Applications"
   }
-];
-
-const careers = [
-  "Entry-level AWS Cloud Administrator",
-  "Junior Cloud Engineer",
-  "AWS Cloud Engineer",
-  "Cloud Administrator"
 ];
 
 const faqData = [
   {
-    q: "What is the primary focus of the program?",
-    a: "The program focuses on mastering AWS services for cloud engineering and DevOps roles."
+    q: "What background do I need for this program?",
+    a: "This program is designed for beginners with no prior experience required."
   },
   {
-    q: "What skills will I gain?",
-    a: "You will gain technical skills in AWS management, networking, security, DevOps practices, and infrastructure optimization."
+    q: "What projects will I work on?",
+    a: "You will develop projects like calculators, games, and data mining applications to apply your learning."
   },
   {
-    q: "Are there any prerequisites?",
-    a: "Yes, basic computer skills, networking concepts, and AWS knowledge are recommended prerequisites."
-  },
-  {
-    q: "What career opportunities can this program lead to?",
-    a: "The program prepares you for roles such as AWS Cloud Administrator, Junior Cloud Engineer, and AWS Cloud Engineer."
+    q: "What career paths are available after completing the program?",
+    a: "Graduates can pursue roles in AI, automation, and data science sectors."
   }
+];
+
+const careers = [
+  "AI and Automation Roles",
+  "Data Science Opportunities"
 ];
 
 export default function ITSupport() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
   const [currentReview, setCurrentReview] = useState(0);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
   const navigate = useNavigate();
@@ -210,6 +179,7 @@ export default function ITSupport() {
     } else {
       document.body.style.overflow = "auto";
     }
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -221,6 +191,7 @@ export default function ITSupport() {
         prev === reviews.length - 1 ? 0 : prev + 1
       );
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -250,18 +221,19 @@ export default function ITSupport() {
               </div>
 
               <h1>
-                AWS Cloud Engineer <br />
-                <span>Certificate Program</span>
+                AI Engineering <br />
+                <span>certificate program</span>
               </h1>
 
               <div className="subHeading">
                 <FaCheckCircle />
-                <h3>Become an AWS Certified Cloud Engineer</h3>
+                <h3>Unlock the World of AI with Python Expertise</h3>
               </div>
 
               <p>
-                Master the skills needed for AWS Cloud engineering and management,
-                gaining expertise in architectural, operational, and DevOps tools.
+                Master Python programming and foundational AI engineering skills in this
+                hands-on certificate program, designed to equip you for automation and
+                data-driven roles.
               </p>
 
               {/* STATS */}
@@ -271,7 +243,7 @@ export default function ITSupport() {
                     <FaBookOpen />
                   </div>
                   <div>
-                    <h4>3</h4>
+                    <h4>1</h4>
                     <span>Courses</span>
                   </div>
                 </div>
@@ -281,7 +253,7 @@ export default function ITSupport() {
                     <FaThLarge />
                   </div>
                   <div>
-                    <h4>177</h4>
+                    <h4>20</h4>
                     <span>Lessons</span>
                   </div>
                 </div>
@@ -291,8 +263,8 @@ export default function ITSupport() {
                     <FaClock />
                   </div>
                   <div>
-                    <h4>36 hours 0 min</h4>
-                    <span>Estimated time</span>
+                    <h4>31 hours 0 min</h4>
+                    <span>Known course time</span>
                   </div>
                 </div>
 
@@ -301,7 +273,7 @@ export default function ITSupport() {
                     <FaChartBar />
                   </div>
                   <div>
-                    <h4>Intermediate to Advanced</h4>
+                    <h4>Beginner to Intermediate</h4>
                     <span>Difficulty</span>
                   </div>
                 </div>
@@ -353,7 +325,7 @@ export default function ITSupport() {
               <div>
                 <img
                   src={heroImage}
-                  alt="AWS Cloud Engineer Certificate"
+                  alt="AI Engineering Certificate Program"
                 />
               </div>
             </div>
@@ -373,26 +345,32 @@ export default function ITSupport() {
                 <HiOutlineHome />
                 <span>Overview</span>
               </a>
+
               <a href="#outcomes" className="nav-item">
                 <FiTarget />
                 <span>Outcomes</span>
               </a>
+
               <a href="#roadmap" className="nav-item">
                 <HiOutlineFlag />
                 <span>Roadmap</span>
               </a>
+
               <a href="#courses" className="nav-item">
                 <HiOutlineAcademicCap />
                 <span>Courses</span>
               </a>
+
               <a href="#projects" className="nav-item">
                 <HiOutlineFolder />
                 <span>Projects</span>
               </a>
+
               <a href="#reviews" className="nav-item">
                 <HiOutlineStar />
                 <span>Reviews</span>
               </a>
+
               <a href="#faq" className="nav-item">
                 <HiOutlineQuestionMarkCircle />
                 <span>FAQ</span>
@@ -409,7 +387,7 @@ export default function ITSupport() {
           </div>
 
           <p className="overview-text">
-            The AWS Cloud Engineer Certificate Program is designed to develop comprehensive expertise in managing and optimizing AWS infrastructure. The program progresses through foundational cloud administration to specialized DevOps engineering capabilities, with a strong emphasis on practical application and real-world scenarios.
+            The AI Engineering certificate program is an immersive learning experience designed for individuals eager to build a foundation in AI engineering through Python programming. This program offers a comprehensive understanding of programming essentials, focusing on practical skills applicable to AI and automation.
           </p>
 
           <div className="highlights-header">
@@ -417,27 +395,13 @@ export default function ITSupport() {
               <HiOutlineSparkles />
             </div>
             <div>
-              <h2>Program Structure</h2>
+              <h2>Program Highlights</h2>
               <div className="title-line"></div>
             </div>
           </div>
 
           <p className="highlights-description">
-            Students will begin by understanding the core components of AWS, continue with advanced strategies for cloud resource management, and culminate with specialized skills in DevOps practices using AWS technologies.
-          </p>
-
-          <div className="highlights-header" style={{ marginTop: "40px" }}>
-            <div className="highlight-icon">
-              <HiOutlineSparkles />
-            </div>
-            <div>
-              <h2>Industry-Relevant Skills</h2>
-              <div className="title-line"></div>
-            </div>
-          </div>
-
-          <p className="highlights-description">
-            This program equips learners to efficiently handle AWS environments, focusing on security, scaling, resource optimization, and infrastructure automation.
+            Through practical projects and a structured curriculum, participants will gain proficiency in writing Python code, developing automation scripts, and implementing programming logic that is critical in today's tech-driven world. Graduates of this program will be prepared to engage in entry-level roles within AI and data science sectors.
           </p>
         </section>
 
@@ -505,7 +469,7 @@ export default function ITSupport() {
                 <HiOutlineSparkles />
               </div>
               <div>
-                <h3>11</h3>
+                <h3>5</h3>
                 <span>CORE SKILLS</span>
               </div>
             </div>
@@ -522,7 +486,7 @@ export default function ITSupport() {
                   <h3>Technical Skills</h3>
                 </div>
                 <div className="skillBadge">
-                  5 skills
+                  3 skills
                 </div>
               </div>
 
@@ -550,7 +514,7 @@ export default function ITSupport() {
                   <h3>Professional Skills</h3>
                 </div>
                 <div className="skillBadge purpleBadge">
-                  6 skills
+                  2 skills
                 </div>
               </div>
 
@@ -573,23 +537,21 @@ export default function ITSupport() {
         {/* TECHNOLOGIES COVERED */}
         <section className="tech-stack-section">
           <div className="section-header">
-            <span className="section-label">TECHNOLOGY STACK</span>
+            <span className="section-label">
+              TECHNOLOGY STACK
+            </span>
             <h2>Technologies Covered</h2>
           </div>
 
           <div className="tech-grid">
-            <div className="tech-pill"><FaServer /><span>AWS</span></div>
-            <div className="tech-pill"><FaServer /><span>EC2</span></div>
-            <div className="tech-pill"><FaServer /><span>Elastic Block Storage</span></div>
-            <div className="tech-pill"><FaNetworkWired /><span>VPC</span></div>
-            <div className="tech-pill"><FaServer /><span>S3</span></div>
-            <div className="tech-pill"><FaServer /><span>RDS</span></div>
-            <div className="tech-pill"><FaShieldAlt /><span>IAM</span></div>
-            <div className="tech-pill"><FaCloud /><span>CloudWatch</span></div>
-            <div className="tech-pill"><FaCloud /><span>CloudTrail</span></div>
-            <div className="tech-pill"><FaLinux /><span>Docker</span></div>
-            <div className="tech-pill"><FaServer /><span>Terraform</span></div>
-            <div className="tech-pill"><FaServer /><span>Jenkins</span></div>
+            <div className="tech-pill">
+              <FaServer />
+              <span>Python</span>
+            </div>
+            <div className="tech-pill">
+              <FaDesktop />
+              <span>PyGame</span>
+            </div>
           </div>
         </section>
 
@@ -611,34 +573,15 @@ export default function ITSupport() {
           <div className="roadmap-body">
             <div className="timeline-container">
               <div className="timeline-step">
-                <div className="timeline-marker">1</div>
-                <div className="timeline-card">
-                  <h4>Foundational</h4>
-                  <p>Gain a foundational understanding of AWS services with practical application through hands-on labs.</p>
-                  <div className="skill-tags">
-                    <span>AWS Cloud Administrator | Fundamentals</span>
-                  </div>
+                <div className="timeline-marker">
+                  <FaBookOpen />
                 </div>
-              </div>
-
-              <div className="timeline-step">
-                <div className="timeline-marker">2</div>
                 <div className="timeline-card">
-                  <h4>Course Completion</h4>
-                  <p>Build advanced skills for managing AWS infrastructure, focusing on engineering tasks and configuration.</p>
+                  <h4>Initial Stage of AI Engineering Bootcamp</h4>
+                  <p>Introduction to foundational Python programming with applications in AI.</p>
                   <div className="skill-tags">
-                    <span>AWS Cloud Administrator Course | Advance</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="timeline-step">
-                <div className="timeline-marker">3</div>
-                <div className="timeline-card">
-                  <h4>Specialized</h4>
-                  <p>Master AWS DevOps tools and methodologies, including version control and continuous deployment.</p>
-                  <div className="skill-tags">
-                    <span>AWS DevOps Engineer Certificate</span>
+                    <span>Python Fundamentals</span>
+                    <span>AI Engineering</span>
                   </div>
                 </div>
               </div>
@@ -656,7 +599,7 @@ export default function ITSupport() {
 
             <div className="roadmap-side-card">
               <div className="card-pill">MILESTONE TRACKER</div>
-              <h3>3 Phase Structured Learning</h3>
+              <h3>1 Phase Structured Learning</h3>
               <p>Designed step-by-step from beginner fundamentals to job readiness.</p>
 
               <div className="progress-widget">
@@ -670,7 +613,7 @@ export default function ITSupport() {
               </div>
 
               <ul className="feature-checklist">
-                <li><span className="check-icon">✓</span> 3 Core Structured Phases</li>
+                <li><span className="check-icon">✓</span> 1 Core Structured Phase</li>
                 <li><span className="check-icon">✓</span> Hands-on Practical Projects</li>
                 <li><span className="check-icon">✓</span> Industry Recognized Certificate</li>
               </ul>
@@ -685,24 +628,40 @@ export default function ITSupport() {
         {/* COURSES */}
         <section id="courses" className="courses-section">
           <div className="section-header">
-            <span className="section-label">PROGRAM STRUCTURE</span>
+            <span className="section-label">
+              PROGRAM STRUCTURE
+            </span>
             <h2>Courses in This Certificate Program</h2>
           </div>
 
           <div className="courses-list">
             {courses.map((course, index) => (
-              <div className={`course-card color-${index + 1}`} key={index}>
-                <div className="course-number">{course.no}</div>
+              <div
+                className={`course-card color-${index + 1}`}
+                key={index}
+              >
+                <div className="course-number">
+                  {course.no}
+                </div>
+
                 <div className="course-content">
-                  <span className="course-label">COURSE {course.no}</span>
+                  <span className="course-label">
+                    INITIAL STAGE OF AI ENGINEERING BOOTCAMP
+                  </span>
+
                   <h3>{course.title}</h3>
+
                   <p>{course.desc}</p>
+
                   <div className="course-tags">
                     {course.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex}>{tag}</span>
+                      <span key={tagIndex}>
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
+
                 <div className="course-side">
                   <div className="course-hours">
                     <FaClock />
@@ -717,6 +676,30 @@ export default function ITSupport() {
         {/* PROJECTS */}
         <section id="projects" className="ph-section">
           <div className="ph-bg-dots"></div>
+
+          <div className="ph-illustration-wrapper">
+            <div className="ph-circle-bg"></div>
+            <div className="ph-window-card">
+              <div className="ph-window-header">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
+              </div>
+              <div className="ph-window-body">
+                <div className="ph-code-box">
+                  <span className="code-symbol">&lt;/&gt;</span>
+                </div>
+                <div className="ph-code-lines">
+                  <div className="line long"></div>
+                  <div className="line medium"></div>
+                  <div className="line short"></div>
+                </div>
+              </div>
+            </div>
+            <div className="ph-gear-card">
+              <div className="ph-gear-icon">⚙</div>
+            </div>
+          </div>
 
           <div className="ph-container">
             <div className="ph-header">
@@ -740,31 +723,39 @@ export default function ITSupport() {
                 </div>
                 <div className="ph-skills-titles">
                   <h3>Skills Practiced</h3>
-                  <p>24 curriculum-grounded skills</p>
+                  <p>7 curriculum-grounded skills</p>
                 </div>
               </div>
 
               <div className="ph-badges-grid">
-                <div className="ph-badge"><Globe size={15} className="ph-badge-icon" /><span>AWS</span></div>
-                <div className="ph-badge"><Network size={15} className="ph-badge-icon" /><span>EC2</span></div>
-                <div className="ph-badge"><Users size={15} className="ph-badge-icon" /><span>Elastic Block Storage</span></div>
-                <div className="ph-badge"><Monitor size={15} className="ph-badge-icon" /><span>VPC</span></div>
-                <div className="ph-badge"><Cpu size={15} className="ph-badge-icon" /><span>S3</span></div>
-                <div className="ph-badge"><Shield size={15} className="ph-badge-icon" /><span>RDS</span></div>
-                <div className="ph-badge"><Server size={15} className="ph-badge-icon" /><span>IAM</span></div>
-                <div className="ph-badge"><Cloud size={15} className="ph-badge-icon" /><span>CloudWatch</span></div>
-                <div className="ph-badge"><ShieldAlert size={15} className="ph-badge-icon" /><span>CloudTrail</span></div>
-                <div className="ph-badge"><Share2 size={15} className="ph-badge-icon" /><span>Docker</span></div>
-                <div className="ph-badge"><Wrench size={15} className="ph-badge-icon" /><span>Terraform</span></div>
-                <div className="ph-badge"><Laptop size={15} className="ph-badge-icon" /><span>Jenkins</span></div>
-                <div className="ph-badge"><Lock size={15} className="ph-badge-icon" /><span>AWS Service Management</span></div>
-                <div className="ph-badge"><Activity size={15} className="ph-badge-icon" /><span>Cloud Computing</span></div>
-                <div className="ph-badge"><MessageSquare size={15} className="ph-badge-icon" /><span>Virtual Networking</span></div>
-                <div className="ph-badge"><Lightbulb size={15} className="ph-badge-icon" /><span>Data Storage Management</span></div>
-                <div className="ph-badge"><Users size={15} className="ph-badge-icon" /><span>AWS Infrastructure Management</span></div>
-                <div className="ph-badge"><Clock size={15} className="ph-badge-icon" /><span>IAM Configuration</span></div>
-                <div className="ph-badge"><Briefcase size={15} className="ph-badge-icon" /><span>EC2 Management</span></div>
-                <div className="ph-badge"><Terminal size={15} className="ph-badge-icon" /><span>Implementing CI/CD Pipelines</span></div>
+                <div className="ph-badge">
+                  <Globe size={15} className="ph-badge-icon" />
+                  <span>Python</span>
+                </div>
+                <div className="ph-badge">
+                  <Monitor size={15} className="ph-badge-icon" />
+                  <span>PyGame</span>
+                </div>
+                <div className="ph-badge">
+                  <Network size={15} className="ph-badge-icon" />
+                  <span>Python Coding</span>
+                </div>
+                <div className="ph-badge">
+                  <Users size={15} className="ph-badge-icon" />
+                  <span>Data Type Management</span>
+                </div>
+                <div className="ph-badge">
+                  <Cpu size={15} className="ph-badge-icon" />
+                  <span>File Handling</span>
+                </div>
+                <div className="ph-badge">
+                  <Shield size={15} className="ph-badge-icon" />
+                  <span>Problem-Solving</span>
+                </div>
+                <div className="ph-badge">
+                  <Server size={15} className="ph-badge-icon" />
+                  <span>Logical Thinking</span>
+                </div>
               </div>
             </div>
 
@@ -780,6 +771,12 @@ export default function ITSupport() {
                   </p>
                 </div>
               </div>
+
+              <div className="ph-cloud-graphic">
+                <div className="ph-cloud-shape">
+                  <Lock size={20} className="ph-lock-icon" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -793,7 +790,7 @@ export default function ITSupport() {
               <p className="reviews-subtitle">Real experiences. Real impact.</p>
             </div>
             <div className="rating-box">
-              <h3>★ 4.5</h3>
+              <h3>★ 5.0</h3>
               <span>Program average across all Course ratings</span>
             </div>
           </div>
@@ -869,23 +866,58 @@ export default function ITSupport() {
 
         {/* FOOTER */}
         <footer className="main-footer">
-          <div className="footer-links-grid">
-            <div className="footer-brand">
-              <h3>EdTech 4D</h3>
-              <p>Empowering learners with hands-on labs and industry-recognized certifications.</p>
-            </div>
-            <div className="footer-col">
-              <h4>Programs</h4>
-              <ul>
-                <li>IT Support</li>
-                <li>Systems Engineer</li>
-                <li>Cloud Engineer</li>
-                <li>Cybersecurity</li>
-              </ul>
-            </div>
+        <div className="footer-links-grid">
+          <div className="footer-brand">
+            <h3>EdTech 4D</h3>
+            <p>Empowering learners with hands-on labs and industry-recognized certifications.</p>
           </div>
-        </footer>
-      </div>
+          <div className="footer-col">
+            <h4>Programs</h4>
+            <ul>
+              <li>IT Support</li>
+              <li>Systems Engineer</li>
+              <li>Cloud Engineer</li>
+              <li>Cybersecurity</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li>Preview</li>
+              <li>Success Stories</li>
+              <li>Blog</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <p>info@edtech4d.com</p>
+            <p>+92 300 1234567</p>
+            <p>123, Tech Street, Lahore</p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2026 EdTech 4D. All rights reserved.</p>
+        </div>
+      </footer>
+
+    </div>
+
+<PricingModal
+  isOpen={isPricingOpen}
+  onClose={() => setIsPricingOpen(false)}
+/>
+
+    
     </>
   );
 }
