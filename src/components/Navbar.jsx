@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css'; 
 import logo from '../assets/LOGO.png'; 
-import PricingModal from '../pages/PricingModal';
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isPricingOpen, setIsPricingOpen] = useState(false); // 2. Modal ki state banayi
   
   const location = useLocation();
   const navigate = useNavigate();
@@ -123,16 +121,15 @@ const Navbar = () => {
           
           <li className="mobile-auth-links">
             <div className="mobile-divider"></div>
-            <Link to="/login" className="btn-login-mobile" onClick={() => setIsMobileMenuOpen(false)}>
+            <button 
+              className="btn-login-mobile" 
+              onClick={() => window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')}
+            >
               Login
-            </Link>
-            {/* Mobile Get Started Button - Isse bhi modal khulega */}
+            </button>
             <button 
               className="btn-get-started-mobile" 
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsPricingOpen(true);
-              }}
+              onClick={() => window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')}
             >
               Get Started
             </button>
@@ -140,12 +137,16 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-auth">
-          <Link to="/login" className="btn-login">Login</Link>
+          <button 
+            className="btn-login" 
+            onClick={() => window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')}
+          >
+            Login
+          </button>
           
-          {/* Desktop Get Started Button - Click karne par Pricing Modal khulega */}
           <button 
             className="btn-get-started" 
-            onClick={() => setIsPricingOpen(true)}
+            onClick={() => window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')}
           >
             Get Started
           </button>
@@ -157,12 +158,6 @@ const Navbar = () => {
           <span className="bar"></span>
         </div>
       </nav>
-
-      {/* 3. Pricing Modal yahan render hoga */}
-      <PricingModal 
-        isOpen={isPricingOpen} 
-        onClose={() => setIsPricingOpen(false)} 
-      />
     </>
   );
 };

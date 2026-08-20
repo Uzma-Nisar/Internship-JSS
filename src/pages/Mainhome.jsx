@@ -661,11 +661,11 @@ function Mainhome() {
 
     <button 
       className="btn-cta-light" 
-      onClick={() => setIsPricingOpen(true)}
+      onClick={() => window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')}
     >
       Get Started Now →
     </button>
-    <PricingModal isOpen={isPricingOpen} onClose={() => setIsPricingOpen(false)} />
+    <PricingModal isOpen={isPricingOpen} onClose={() =>window.open('https://www.jobskillshare.org/affiliate-program/', '_blank')} />
 
   </div>
 </section>
