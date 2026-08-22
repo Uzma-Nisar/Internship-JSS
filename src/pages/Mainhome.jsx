@@ -3,6 +3,7 @@ import './Mainhome.css';
 import heroImg from '../assets/hero.png';
 import { useNavigate } from "react-router-dom";
 import PricingModal from './PricingModal'; 
+import { Facebook, Instagram, Twitter } from "react-feather";
 
 
 import { FiClock, FiMap, FiAward, FiPlayCircle, FiCpu, FiGlobe } from 'react-icons/fi';
@@ -676,7 +677,13 @@ function Mainhome() {
           <div className="footer-brand">
             <h3>EdTech 4D</h3>
             <p>Empowering learners with hands-on labs and industry-recognized certifications.</p>
+             <div className="footer-social">
+            <a href="https://www.jobskillshare.org/affiliate-program/" className="social-btn fb"><Facebook size={18} /></a>
+            <a href="https://www.jobskillshare.org/affiliate-program/" className="social-btn ig"><Instagram size={18} /></a>
+            <a href="https://www.jobskillshare.org/affiliate-program/" className="social-btn tw"><Twitter size={18} /></a>
           </div>
+          </div>
+          
           <div className="footer-col">
             <h4>Programs</h4>
             <ul>
