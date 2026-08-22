@@ -28,6 +28,36 @@ body {
   margin: auto;
   padding: 0px;
 }
+
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 40px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: #4a5568;
+}
+
+.breadcrumb-item {
+  color: #3b5998;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #718096;
+  font-weight: bold;
+}
+
+.breadcrumb-item.active {
+  color: #2d3748;
+  font-weight: 600;
+}
 .itHero {
   padding-top: 1px;
   padding-bottom: 10px;
